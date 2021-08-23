@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3>メニュー01</h3>
+  <ul>
+    <li id="item1-1">たまご<br><button id="q" type="button" onclick="insert_1_1()">注文</button></li>
+    <li id="item1-2">まぐろ<br><button type="button" onclick="insert_1_2()">注文</button></li>
+    <li id="item1-3">いか<br><button type="button" onclick="insert_1_3()">注文</button></li>
+  </ul>
+
+<h3>注文リスト01</h3>
+<ul id="step01">
+</ul>
+
+<h3>メニュー02</h3>
+<ul>
+  <li id="item2-1">たまご</li><button type="button" onclick="insert_2_1()">注文</button>
+  <li id="item2-2">まぐろ</li><button type="button" onclick="insert_2_2()">注文</button>
+  <li id="item2-3">いか</li><button type="button" onclick="insert_2_3()">注文</button>
+</ul>
+
+<h3>注文リスト02</h3>
+<ul id="step02">
+</ul>
+
+<h3>メニュー03</h3>
+<ul>
+  <li id="item3-1">たまご</li><button type="button" onclick="insert_3_1()">注文</button>
+  <li id="item3-2">まぐろ</li><button type="button" onclick="insert_3_2()">注文</button>
+  <li id="item3-3">いか</li><button type="button" onclick="insert_3_3()">注文</button>
+</ul>
+
+<h3>注文リスト03</h3>
+<ul id="step03">
+</ul>
+  <script>
+  //--------------------[注文リストボタン付き処理01]--------------------//
+  const TopId = document.getElementById("step01");
+  function insert_1_1()//step01
+  {
+    let li_id = document.getElementById("item1-1");//要素を取得
+    let copy_li = li_id.cloneNode(true);//取得したliをコピー
+    TopId.appendChild(copy_li);//コピーしたliをulに保存
+  }
+
+  function insert_1_2()//step01
+  {
+    let li_id = document.getElementById("item1-2");//要素を取得
+    let copy_li = li_id.cloneNode(true);//取得したliをコピー
+    TopId.appendChild(copy_li);//コピーしたliをulに保存
+  }
+
+  function insert_1_3()//step01
+  {
+    let li_id = document.getElementById("item1-3");//要素を取得
+    let copy_li = li_id.cloneNode(true);//取得したliをコピー
+    TopId.appendChild(copy_li);//コピーしたliをulに保存
+  }
+
+//--------------------[注文リストボタン付き処理02]--------------------//
+const TopId02 = document.getElementById("step02");
+function insert_2_1()//step01
+  {
+    let li_id = document.getElementById("item2-1");//要素を取得
+    let copy_li = li_id.cloneNode(true);//取得したliをコピー
+    TopId02.appendChild(copy_li);//コピーしたliをulに保存
+  }
+
+  function insert_2_2()//step01
+  {
+    let li_id = document.getElementById("item2-2");//要素を取得
+    let copy_li = li_id.cloneNode(true);//取得したliをコピー
+    TopId02.appendChild(copy_li);//コピーしたliをulに保存
+  }
+
+  function insert_2_3()//step01
+  {
+    let li_id = document.getElementById("item2-3");//要素を取得
+    let copy_li = li_id.cloneNode(true);//取得したliをコピー
+    TopId02.appendChild(copy_li);//コピーしたliをulに保存
+  }
+
+  //--------------------[注文リストボタン付き処理03]--------------------//
+  const TopId03 = document.getElementById("step03");
+  function insert_3_1()//step03
+  {
+    //----[ul保存]----//
+    let li_id = document.getElementById("item3-1");//要素を取得
+    let copy_li = li_id.cloneNode(true);//取得したliをコピー
+    TopId03.appendChild(copy_li);//コピーしたliをulに保存
+    
+    //----[ボタン作成]----//
+    const listbutton = document.createElement('button')//ボタンを作成
+    listbutton.append("取消し");//取消しボタン名を作成
+    TopId03.append(listbutton);//ボタンを出現
+   
+    listbutton.onclick = function(){
+    //----追加した要素を消す---//
+    let id = document.getElementById("step03");//消したい親要素を取得
+    let children = id.children;//親から子を取得
+    console.log(children);
+    id.removeChild(children.item(0));//liを削除
+    id.removeChild(listbutton);//ボタンを削除
+  }
+  }
+
+  function insert_3_2()//step03
+  {
+    //----[ul保存]----//
+    let li_id = document.getElementById("item3-2");//要素を取得
+    let copy_li = li_id.cloneNode(true);//取得したliをコピー
+    TopId03.appendChild(copy_li);//コピーしたliをulに保存
+    
+    //----[ボタン作成]----//
+    const listbutton02 = document.createElement('button')//ボタンを作成
+    listbutton02.append("取消し");//取消しボタン名を作成
+    TopId03.append(listbutton02);//ボタンを出現
+   
+    listbutton02.onclick = function(){
+    //----追加した要素を消す---//
+    let id = document.getElementById("step03");//消したい親要素を取得
+    let children = id.children;//親から子を取得
+    id.removeChild(children.item(0));//liを削除
+    id.removeChild(listbutton02);//ボタンを削除
+  }
+  }
+
+  function insert_3_3()//step03
+  {
+    //----[ul保存]----//
+    let li_id = document.getElementById("item3-3");//要素を取得
+    let copy_li = li_id.cloneNode(true);//取得したliをコピー
+    TopId03.appendChild(copy_li);//コピーしたliをulに保存
+    
+    //----[ボタン作成]----//
+    const listbutton03 = document.createElement('button')//ボタンを作成
+    listbutton03.append("取消し");//取消しボタン名を作成
+    TopId03.append(listbutton03);//ボタンを出現
+   
+    listbutton03.onclick = function(){
+    //----追加した要素を消す---//
+    let id = document.getElementById("step03");//消したい親要素を取得
+    let children = id.children;//親から子を取得
+    id.removeChild(children.item(0));//liを削除
+    id.removeChild(listbutton03);//ボタンを削除
+  }
+  }
+  </script>
+  </body>
+  </html>
